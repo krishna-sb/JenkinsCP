@@ -5,7 +5,7 @@ pipeline {
             steps {
                 sh 'echo "Hello World"'
                 sh 'python --version'
-                sh 'java --version'
+                sh 'java -version'
             }
         }
     }
