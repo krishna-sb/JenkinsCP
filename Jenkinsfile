@@ -1,6 +1,7 @@
 /* pipeline {
     agent any
     stages {
+    { docker { image 'node:6.3' } }
         stage('build') {
             steps {
                 sh 'echo "Hello World"'
@@ -15,12 +16,12 @@ pipeline {
     environment {
         PATH = "/usr/local/bin:$PATH"
     }
-    agent { docker { image 'node:6.3' } }
+    agent any
     stages {
         stage('build') {
             steps {
                 sh 'echo $PATH'
-                sh 'npm --version'
+                sh 'java -version'
                 
             }
         }
