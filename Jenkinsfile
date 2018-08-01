@@ -49,6 +49,15 @@ node {
 
                 echo "Path: $PATH"
                 sh 'docker run --rm -p 7080:8080 tomcat:8.0 &'
+
+               
+
+            
+        }
+    
+        stage('Test Tomcat') {
+
+
                 sh 'sleep 20' 
                 sh "curl localhost:7080"
 
