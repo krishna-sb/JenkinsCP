@@ -20,6 +20,13 @@ pipeline {
                 echo "Testing tomcat Version"
                 
             }
+            
+        }
+        stage('Run Tomcat') {
+            steps {
+                sh 'docker run -it --rm -p 7080:8080 tomcat:8.0'
+            }
+            
         }
     }
 }
