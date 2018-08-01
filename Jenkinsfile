@@ -24,6 +24,7 @@ pipeline {
         }
         stage('Run Tomcat') {
             steps {
+                echo "Path: $PATH"
                 sh 'docker run -it --rm -p 7080:8080 tomcat:8.0'
             }
             
