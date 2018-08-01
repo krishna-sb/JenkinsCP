@@ -13,12 +13,12 @@
 }*/
 
 pipeline {
-    agent { docker { image 'node:6.14' } }
+    agent { docker { image 'tomcat:8.0' } }
     stages {
         stage('build') {
             steps {
-                echo "Testing NPM Version"
-                sh 'npm --version'
+                echo "Testing tomcat Version"
+                
             }
         }
     }
