@@ -12,6 +12,7 @@
     }
 }*/
 
+/**
 pipeline {
     agent { docker { image 'tomcat:8.0' } }
     stages {
@@ -32,3 +33,27 @@ pipeline {
         }
     }
 }
+**/
+
+node {
+    
+    
+        stage('build') {
+
+                echo "Testing tomcat Version"
+                
+
+            
+        }
+        stage('Run Tomcat') {
+
+                echo "Path: $PATH"
+                sh 'docker run --rm -p 7080:8080 tomcat:8.0 &'
+                sh 'sleep 20' 
+                sh "curl localhost:8080"
+
+            
+        }
+
+}
+
