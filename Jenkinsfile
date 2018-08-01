@@ -20,8 +20,8 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'echo $PATH'
-                sh 'java -version'
+                sh 'echo "Testing NPM Version"'
+                sh 'npm --version'
                 
             }
         }
