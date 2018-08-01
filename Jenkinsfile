@@ -19,7 +19,6 @@ pipeline {
             steps {
                 echo "Testing NPM Version"
                 sh 'npm --version'
-                
             }
         }
     }
