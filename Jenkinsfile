@@ -38,29 +38,25 @@ pipeline {
 
 node {
     
-    
         stage('build') {
 
                 echo "Testing tomcat Version"
-                
-
-            
+        
+        }
+        stage('deploy) {
+             sh 'docker build -t "testpipe:dockerfile" /Users/ksubbian/Documents/Anaconda/Jenkins'
+             
         }
         stage('Run Tomcat') {
 
                 echo "Path: $PATH"
-                sh 'docker run --rm -p 7080:8080 tomcat:8.0 &'
-
-               
-
-            
+                sh 'docker run -d --rm -p 7080:8080 testpipe:dockerfile'   
         }
     
         stage('Test Tomcat') {
 
-
                 sh 'sleep 20' 
-                sh "curl localhost:7080"
+                sh "curl http://localhost:7080/UserManagement/rest/Employees | json_pp"
 
             
         }
