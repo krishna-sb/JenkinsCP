@@ -43,7 +43,7 @@ node {
                 echo "Testing tomcat Version"
         
         }
-        stage('deploy) {
+        stage('deploy') {
              sh 'docker build -t "testpipe:dockerfile" /Users/ksubbian/Documents/Anaconda/Jenkins'
              
         }
