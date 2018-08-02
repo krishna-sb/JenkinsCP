@@ -12,7 +12,7 @@
     }
 }*/
 
-
+/**
 pipeline {
     agent { docker { image 'tomcat:8.0' } }
     stages {
@@ -33,9 +33,9 @@ pipeline {
         }
     }
 }
+**/
 
 
-/**
 node {
     
     
@@ -67,5 +67,5 @@ node {
 
 
 }
-**/
+
 
