@@ -12,14 +12,14 @@
     }
 }*/
 
-/**
+
 pipeline {
     agent { docker { image 'tomcat:8.0' } }
     stages {
         stage('build') {
             steps {
                 echo "Testing tomcat Version"
-                
+                sh 'docker run --rm -p 7080:8080 tomcat:8.0 &'
             }
             
         }
@@ -27,14 +27,15 @@ pipeline {
             steps {
                 echo "Path: $PATH"
                 //sh 'docker run -it --rm -p 7080:8080 tomcat:8.0'
-                sh "curl localhost:8080"
+                sh "curl localhost:7080"
             }
             
         }
     }
 }
-**/
 
+
+/**
 node {
     
     
@@ -66,4 +67,5 @@ node {
 
 
 }
+**/
 
