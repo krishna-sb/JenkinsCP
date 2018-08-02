@@ -48,9 +48,9 @@ node {
              
         }
         stage('Run Tomcat') {
-
+                sh 'docker rm -f "testpipe"'
                 echo "Path: $PATH"
-                sh 'docker run -d --rm -p 7080:8080 testpipe:dockerfile'   
+                sh 'docker run --name "testpipe" -d --rm -p 7080:8080 testpipe:dockerfile'   
         }
     
         stage('Test Tomcat') {
